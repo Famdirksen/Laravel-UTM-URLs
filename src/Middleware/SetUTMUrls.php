@@ -17,24 +17,24 @@ class SetUTMUrls
     {
         $response = $next($request);
 
-        if(config('utm-urls.enabled', false)) {
+        if (config('utm-urls.enabled', false)) {
             $response->setContent($this->appendUtmsToString($response->getContent()));
         }
 
         return $response;
     }
 
-
-    protected function appendUtmsToString($string) {
+    protected function appendUtmsToString($string)
+    {
         $regex = '#(<a.*?href=")([^"]*)("[^>]*?>)#i';
 
-        return preg_replace_callback($regex, function($match) {
+        return preg_replace_callback($regex, function ($match) {
             $url = $match[2];
 
             //check if a href url is in skip link
             $aHrefLink = parse_url($url);
 
-            if (isset($aHrefLink['host']) && !empty($aHrefLink['host']) && in_array($aHrefLink['host'], config('utm-urls.skipped_hosts', []))) {
+            if (isset($aHrefLink['host']) && ! empty($aHrefLink['host']) && in_array($aHrefLink['host'], config('utm-urls.skipped_hosts', []))) {
                 return $match[0];
             } else {
                 //check if there is already an ? in the url
@@ -45,14 +45,13 @@ class SetUTMUrls
                 }
 
                 //set all the utms
-                foreach(config('utm-urls.utms', []) as $utm => $value) {
-                    if(!empty($value)) {
-                        if($counter == 0) {
+                foreach (config('utm-urls.utms', []) as $utm => $value) {
+                    if (! empty($value)) {
+                        if ($counter == 0) {
                             $url .= '?';
                         } else {
                             $url .= '&';
                         }
-
 
                         $url .= 'utm_'.str_slug(strtolower($utm)).'='.$value;
 
@@ -60,7 +59,7 @@ class SetUTMUrls
                     }
                 }
 
-                return $match[1] . $url . $match[3];
+                return $match[1].$url.$match[3];
             }
         }, $string);
     }

@@ -10,7 +10,7 @@ return [
      * These hosts will be skipped
      */
     'skipped_hosts' => [
-        'laravel.com'
+        'laravel.com',
     ],
 
     /*
