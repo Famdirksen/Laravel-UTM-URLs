@@ -42,16 +42,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
+        },
         "laravel": {
             "providers": [
                 "Famdirksen\\LaravelUTMUrls\\LaravelUTMUrlsServiceProvider"
             ]
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
