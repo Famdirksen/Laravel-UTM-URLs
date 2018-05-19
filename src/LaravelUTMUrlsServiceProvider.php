@@ -15,7 +15,7 @@ class LaravelUTMUrlsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/utm-urls.php' => config_path('utm-urls.php'),
-        ], 'config');
+        ] );
     }
 
     /**
