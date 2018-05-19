@@ -20,6 +20,10 @@ $ composer require famdirksen/laravel-utm-urls
 
 Add the `\Famdirksen\LaravelUTMUrls\Middleware\SetUTMUrls::class` to your `app/Http/Kernel.php`. Thisway all the url's on your site will have the UTM attributes from the config file (`utm-urls.php`) added.
 
+You can publish the config file with:
+
+`php artisan vendor:publish --provider="Famdirksen\LaravelUTMUrls\LaravelUTMUrlsServiceProvider"`
+
 ## Testing
 
 ``` bash
