@@ -1,5 +1,5 @@
 {
-    "name": "Famdirksen/LaravelUTMUrls",
+    "name": "famdirksen/laravel-utm-urls",
     "type": "library",
     "description": "This package will add utm attributes to all urls",
     "keywords": [
