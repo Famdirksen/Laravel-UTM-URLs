@@ -18,7 +18,7 @@ $ composer require famdirksen/laravel-utm-urls
 
 ## Usage
 
-Add the `\Famdirksen\LaravelUTMUrls\Middlewares\SetUTMUrls::class` to your `app/Http/Kernel.php`. Thisway all the url's on your site will have the UTM attributes from the config file (`utm-urls.php`) added.
+Add the `\Famdirksen\LaravelUTMUrls\Middleware\SetUTMUrls::class` to your `app/Http/Kernel.php`. Thisway all the url's on your site will have the UTM attributes from the config file (`utm-urls.php`) added.
 
 ## Testing
 
