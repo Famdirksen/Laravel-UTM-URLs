@@ -18,12 +18,34 @@ class SetUTMUrls
         $response = $next($request);
 
         if (config('utm-urls.enabled', false)) {
-            $response->setContent($this->appendUtmsToString($response->getContent()));
+            if($this->hasToAppend($request)) {
+                $response->setContent($this->appendUtmsToString($response->getContent()));
+            }
         }
 
         return $response;
     }
 
+    /**
+     * Check if we need to set the UTM attributes
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @return bool
+     */
+    public function hasToAppend($request) {
+        if(!$request->headers->has('x-do-not-append-campagne')) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Append the UTM attributes to all urls
+     *
+     * @param $string
+     * @return null|string|string[]
+     */
     protected function appendUtmsToString($string)
     {
         $regex = '#(<a.*?href=")([^"]*)("[^>]*?>)#i';

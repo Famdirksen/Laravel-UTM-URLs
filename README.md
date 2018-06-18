@@ -20,6 +20,8 @@ $ composer require famdirksen/laravel-utm-urls
 
 Add the `\Famdirksen\LaravelUTMUrls\Middleware\SetUTMUrls::class` to your `app/Http/Kernel.php`. Thisway all the url's on your site will have the UTM attributes from the config file (`utm-urls.php`) added.
 
+To disable the UTM attributes appended to a url on specific routes, you can add the follow middleware to the route or group: `\Famdirksen\LaravelUTMUrls\Middleware\DisableUTMUrls::class`. This will set the header `x-do-not-append-campagne` so it won't append the UTM attributes.
+
 You can publish the config file with:
 
 `php artisan vendor:publish --provider="Famdirksen\LaravelUTMUrls\LaravelUTMUrlsServiceProvider"`
