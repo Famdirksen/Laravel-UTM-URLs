@@ -18,7 +18,7 @@ class SetUTMUrls
         $response = $next($request);
 
         if (config('utm-urls.enabled', false)) {
-            if($this->hasToAppend($request)) {
+            if ($this->hasToAppend($request)) {
                 $response->setContent($this->appendUtmsToString($response->getContent()));
             }
         }
@@ -27,13 +27,14 @@ class SetUTMUrls
     }
 
     /**
-     * Check if we need to set the UTM attributes
+     * Check if we need to set the UTM attributes.
      *
      * @param \Illuminate\Http\Request  $request
      * @return bool
      */
-    public function hasToAppend($request) {
-        if(!$request->headers->has('x-do-not-append-campagne')) {
+    public function hasToAppend($request)
+    {
+        if (! $request->headers->has('x-do-not-append-campagne')) {
             return true;
         }
 
@@ -41,7 +42,7 @@ class SetUTMUrls
     }
 
     /**
-     * Append the UTM attributes to all urls
+     * Append the UTM attributes to all urls.
      *
      * @param $string
      * @return null|string|string[]
