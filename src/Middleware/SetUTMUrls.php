@@ -73,20 +73,20 @@ class SetUTMUrls
 
                     //set all the utms
                     foreach (config('utm-urls.utms', []) as $utm => $value) {
-                        if (!empty($value)) {
+                        if (! empty($value)) {
                             if ($counter == 0) {
                                 $url .= '?';
                             } else {
                                 $url .= '&';
                             }
 
-                            $url .= 'utm_' . str_slug(strtolower($utm)) . '=' . $value;
+                            $url .= 'utm_'.str_slug(strtolower($utm)).'='.$value;
 
                             $counter++;
                         }
                     }
 
-                    return $match[1] . $url . $match[3];
+                    return $match[1].$url.$match[3];
                 }
             }
         }, $string);
