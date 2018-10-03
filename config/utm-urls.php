@@ -7,14 +7,14 @@ return [
     'enabled' => env('UTM_URLS_ENABLED', true),
 
     /*
-     * These hosts will be skipped
+     * All links that contains a host listed in the array will be ignored.
      */
     'skipped_hosts' => [
         'laravel.com',
     ],
 
     /*
-     * These values will be added to all links
+     * These values will be added to all links.
      */
     'utms' => [
         'source' => 'utm-urls',
