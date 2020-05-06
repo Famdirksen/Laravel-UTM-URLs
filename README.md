@@ -38,8 +38,9 @@ If you discover any security related issues, please email info@famdirksen.nl ins
 
 ## Credits
 
-- [Robin Dirksen][link-author]
-- [All Contributors][link-contributors]
+- [Robin Dirksen](https://github.com/robindirksen1) ([personal site](https://robindirksen.nl))
+- [Famdirksen](https://famdirksen.nl)
+- [All Contributors](../../contributors)
 
 ## License
 
@@ -57,5 +58,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/Famdirksen/Laravel-UTM-URLs/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/Famdirksen/Laravel-UTM-URLs
 [link-downloads]: https://packagist.org/packages/Famdirksen/Laravel-UTM-URLs
-[link-author]: https://github.com/robindirksen1
-[link-contributors]: ../../contributors
